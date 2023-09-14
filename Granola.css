@@ -1,0 +1,24 @@
+nav {
+    background: #022B3A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+form {
+    /* Mueve el formulario a la izquierda */
+    margin-right: auto;
+}
+
+a {
+    /* Centra el enlace en el medio */
+    margin:  auto;
+    text-align: center;
+}
+
+div {
+    /* Mueve el div a la derecha */
+    margin-left: auto;
+    background-color: red;
+}
