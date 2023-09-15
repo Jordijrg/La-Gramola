@@ -1,9 +1,18 @@
+:root {
+    --borde-pagina: 10px;
+}
+
+body{
+    background-color: black;
+    margin:0;
+}
 nav {
     background: #022B3A;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    border-radius: 10px;
 }
 
 form {
@@ -17,8 +26,72 @@ a {
     text-align: center;
 }
 
-div {
+div.img {
     /* Mueve el div a la derecha */
     margin-left: auto;
     background-color: red;
 }
+div.playlist{
+    background: #022B3A;
+    padding: 10px;
+    margin-top: 0.5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.Pcançons{
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 1%;
+    font-size: small;
+
+}
+.cançons{
+    width: 70%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 1%;
+    font-size: small;
+}
+p{
+    color: white;
+}
+.nav{grid-area: nav;}
+.playlist{grid-area: playlist;}
+.songs{grid-area: songs;
+    background-color: #022B3A;
+    padding: 10px;
+}
+.barra{grid-area: barra;
+    background-color: #022B3A;
+}
+.grid-container{
+    background-color: black;
+    display: grid;
+    grid-template-areas:
+    'nav nav nav'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist barra barra'
+    'playlist barra barra';
+    gap: 10px;
+    height: 100%;
+}
+.grid-container > * {
+    text-align: center;
+    border-radius: 10px;
+  }
+  .container{
+    height: calc(100vh - var(--borde-pagina) * 2);
+    padding: var(--borde-pagina);
+  }
