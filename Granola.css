@@ -1,11 +1,16 @@
 :root {
     --borde-pagina: 10px;
 }
-
+.container{
+  height: calc(100vh - var(--borde-pagina) * 2);
+  padding: var(--borde-pagina);
+}
 body{
     background-color: black;
     margin:0;
 }
+
+
 nav {
     background: #022B3A;
     display: flex;
@@ -14,7 +19,10 @@ nav {
     padding: 10px;
     border-radius: 10px;
 }
-
+.user{
+    width: 45px;
+    height: 40px;
+}
 form {
     /* Mueve el formulario a la izquierda */
     margin-right: auto;
@@ -29,12 +37,10 @@ a {
 div.img {
     /* Mueve el div a la derecha */
     margin-left: auto;
-    background-color: red;
 }
 div.playlist{
     background: #022B3A;
     padding: 10px;
-    margin-top: 0.5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -42,20 +48,23 @@ div.playlist{
     
     
 }
-.Pcançons{
+#pauseButton{
+    display: none;
+}
+button.Pcançons{
     width: 100%;
     background-color: black;
     color: white;
     border: none;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 1%;
+    margin-bottom: 4%;
     font-size: small;
 
 }
 .cançons{
     width: 70%;
-    background-color: black;
+    background-color: #022B3A;
     color: white;
     border: none;
     border-radius: 10px;
@@ -67,10 +76,12 @@ p{
     color: white;
 }
 .nav{grid-area: nav;}
-.playlist{grid-area: playlist;}
+.playlist{grid-area: playlist;
+    overflow-y: auto;}
 .songs{grid-area: songs;
-    background-color: #022B3A;
+    background-color: black;
     padding: 10px;
+    overflow-y: auto;
 }
 .barra{grid-area: barra;
     background-color: #022B3A;
@@ -82,7 +93,10 @@ p{
     'nav nav nav'
     'playlist songs songs'
     'playlist songs songs'
-    'playlist barra barra'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
     'playlist barra barra';
     gap: 10px;
     height: 100%;
@@ -91,7 +105,75 @@ p{
     text-align: center;
     border-radius: 10px;
   }
-  .container{
-    height: calc(100vh - var(--borde-pagina) * 2);
-    padding: var(--borde-pagina);
+
+  img.lupa{
+    width: 10px;
+    height: 10px;
+  }
+
+  .cntr{
+    grid-area: cntr;
+    color: white;
+    align-items: center;
+  }
+  .musica{
+    grid-area: musica;
+    
+  }
+  h6{
+    display: inline-block;
+    color: white;
+  }
+  .imgsong{
+    grid-area: imgsong;
+  }
+  div.barra{
+    display: grid;
+    grid-template-areas:
+    'cntr musica musica musica imgsong';
+    gap: 10px;
+    align-items: center;
+  }
+  .cntr{
+    display: block;
+  }
+
+  .cntr div{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  #barraProgreso{
+    width: 80%;
+  }
+  img.portadasong{
+    width:100px;
+    height: 100px;
+    padding: 10px;
+  }
+  div > img{
+    width: 25px;
+    height: 25px;
+  }
+
+  #barravolum{
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid-container{
+        background-color: black;
+        display: grid;
+        grid-template-areas:
+        'nav nav nav'
+        'playlist songs songs'
+        'playlist songs songs'
+        'playlist songs songs'
+        'playlist songs songs'
+        'playlist songs songs'
+        'playlist songs songs'
+        'barra barra barra';
+        gap: 10px;
+        height: 100%;
+    }
   }

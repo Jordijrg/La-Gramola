@@ -1,5 +1,10 @@
+:root {
+    --borde-pagina: 10px;
+}
+
 body{
     background-color: black;
+    margin:0;
 }
 nav {
     background: #022B3A;
@@ -28,9 +33,7 @@ div.img {
 }
 div.playlist{
     background: #022B3A;
-    width: 30%;
     padding: 10px;
-    margin-top: 0.5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -38,16 +41,122 @@ div.playlist{
     
     
 }
-input.cançons{
-    width: 99%;
+.Pcançons{
+    width: 100%;
     background-color: black;
     color: white;
     border: none;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 1%;
+    font-size: small;
 
+}
+.cançons{
+    width: 70%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 1%;
+    font-size: small;
 }
 p{
     color: white;
 }
+.nav{grid-area: nav;}
+.playlist{grid-area: playlist;}
+.songs{grid-area: songs;
+    background-color: #022B3A;
+    padding: 10px;
+}
+.barra{grid-area: barra;
+    background-color: #022B3A;
+}
+.grid-container{
+    background-color: black;
+    display: grid;
+    grid-template-areas:
+    'nav nav nav'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist songs songs'
+    'playlist barra barra';
+    gap: 10px;
+    height: 100%;
+}
+.grid-container > * {
+    text-align: center;
+    border-radius: 10px;
+  }
+  .container{
+    height: calc(100vh - var(--borde-pagina) * 2);
+    padding: var(--borde-pagina);
+  }
+  img.lupa{
+    width: 10px;
+    height: 10px;
+  }
+
+  .cntr{
+    grid-area: cntr;
+    color: white;
+    align-items: center;
+  }
+  .musica{
+    grid-area: musica;
+    
+  }
+  .imgsong{
+    grid-area: imgsong;
+  }
+  div.barra{
+    display: grid;
+    grid-template-areas:
+    'cntr musica musica musica imgsong';
+    gap: 10px;
+    align-items: center;
+  }
+
+  .vol{
+    grid-area: vol;
+  }
+  .rep{
+    grid-area: rep;
+  }
+  .ale{
+    grid-area: ale;
+  }
+  .ant{
+    grid-area: ant;
+  }
+  .pausa{
+    grid-area: pausa;
+  }
+  .next{
+    grid-area: next;
+  }
+  .cntr{
+    display: block;
+  }
+
+  .cntr div{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  #barraProgreso{
+    width: 80%;
+  }
+  img.portadasong{
+    width:150px;
+    height: 150px;
+  }
+  div > img{
+    width: 25px;
+    height: 25px;
+  }

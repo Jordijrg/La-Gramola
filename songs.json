@@ -1,0 +1,216 @@
+{
+    "playlists": [
+      {
+        "id": 1,
+        "name": "Para Estudiar",
+        "songs": [
+          {
+            "id": 1,
+            "title": "Dream",
+            "artist": "Artista 1",
+            "url": "songs/Dream.mp3",
+            "cover":""
+          },
+          {
+            "id": 2,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Dreams.mp3",
+            "cover":""
+          },
+          {
+            "id": 3,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Gully.mp3",
+            "cover":""
+          },
+          {
+            "id": 4,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Indian_Cinemascope.mp3",
+            "cover":""
+          },
+          {
+            "id": 5,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Lawrence.mp3",
+            "cover":""
+          }
+        ]
+        
+      },
+      {
+        "id": 2,
+        "name": "Anuel chill",
+        "songs": [
+          {
+            "id": 1,
+            "title": "Dream",
+            "artist": "Artista 1",
+            "url": "songs/Dream.mp3",
+            "cover":""
+          },
+          {
+            "id": 2,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Dreams.mp3",
+            "cover":""
+          },
+          {
+            "id": 3,
+            "title": "Canción 3",
+            "artist": "Artista 2",
+            "url": "songs/Gully.mp3",
+            "cover":""
+          },
+          {
+            "id": 4,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Indian_Cinemascope.mp3",
+            "cover":""
+          },
+          {
+            "id": 5,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Lawrence.mp3",
+            "cover":""
+          },
+          {
+            "id": 6,
+            "title": "Undeground",
+            "artist": "Artista 2",
+            "url": "songs/Underground.mp3",
+            "cover":""
+          }
+        ]
+        
+      },
+      {
+        "id": 3,
+        "name": "GYM",
+        "songs": [
+          {
+            "id": 1,
+            "title": "Dream",
+            "artist": "Artista 1",
+            "url": "songs/Dream.mp3",
+            "cover":""
+          },
+          {
+            "id": 2,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Dreams.mp3",
+            "cover":""
+          },
+          {
+            "id": 3,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Gully.mp3",
+            "cover":""
+          },
+          {
+            "id": 4,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Indian_Cinemascope.mp3",
+            "cover":""
+          },
+          {
+            "id": 5,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Lawrence.mp3",
+            "cover":""
+          }
+        ]
+        
+      },
+      {
+        "id": 4,
+        "name": "Jhayco",
+        "songs": [
+          {
+            "id": 1,
+            "title": "Dream",
+            "artist": "Artista 1",
+            "url": "songs/Dream.mp3",
+            "cover":""
+          },
+          {
+            "id": 2,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Dreams.mp3",
+            "cover":""
+          },
+          {
+            "id": 3,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Gully.mp3",
+            "cover":""
+          },
+          {
+            "id": 4,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Indian_Cinemascope.mp3",
+            "cover":""
+          },
+          {
+            "id": 5,
+            "title": "Canción 2",
+            "artist": "Artista 2",
+            "url": "songs/Lawrence.mp3",
+            "cover":""
+          }
+        ]
+        
+      }
+    ],
+    "totesSongs": [
+      {
+        "id": 1,
+        "title": "Dream",
+        "artist": "Artista 1",
+        "url": "songs/Dream.mp3",
+        "cover":""
+      },
+      {
+        "id": 2,
+        "title": "Canción 2",
+        "artist": "Artista 2",
+        "url": "songs/Dreams.mp3",
+        "cover":""
+      },
+      {
+        "id": 3,
+        "title": "Canción 2",
+        "artist": "Artista 2",
+        "url": "songs/Gully.mp3",
+        "cover":""
+      },
+      {
+        "id": 4,
+        "title": "Canción 2",
+        "artist": "Artista 2",
+        "url": "songs/Indian_Cinemascope.mp3",
+        "cover":""
+      },
+      {
+        "id": 5,
+        "title": "Canción 2",
+        "artist": "Artista 2",
+        "url": "songs/Lawrence.mp3",
+        "cover":""
+      }
+    ]
+}
