@@ -1,6 +1,67 @@
 :root {
     --borde-pagina: 10px;
 }
+
+/* Estilo para el contenedor del formulario */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  overflow: hidden;
+}
+
+/* Estilo para centrar el formulario */
+.center-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #022B3A; /* Fondo de color #022B3A */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white; /* Color de texto blanco */
+  width: 350px; /* Ancho del formulario ajustado */
+}
+
+/* Estilo para el formulario */
+#login-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para los campos del formulario */
+#login-form label {
+  margin-bottom: 5px;
+  color: white; /* Color de texto blanco */
+}
+
+#login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: black; /* Color de texto negro */
+}
+
+/* Estilo para el botón Enviar */
+#login-form button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
 .container{
   height: calc(100vh - var(--borde-pagina) * 2);
   padding: var(--borde-pagina);
@@ -37,7 +98,23 @@ a {
 div.img {
     /* Mueve el div a la derecha */
     margin-left: auto;
+    display: inline-block;
 }
+nav p {
+  margin: 0; /* Elimina los márgenes */
+  padding-left: 5px; /* Agrega un espacio a la izquierda del texto si lo deseas */
+}
+/* Estilo para el elemento .user-container */
+.user-container {
+  display: flex;
+  align-items: center;
+}
+/* Estilo para el elemento <p> dentro de .user-container */
+.user-container p {
+  margin: 0; /* Elimina los márgenes */
+  padding-left: 5px; /* Agrega un espacio a la izquierda del texto si lo deseas */
+}
+
 div.playlist{
     background: #022B3A;
     padding: 10px;
@@ -52,7 +129,7 @@ div.playlist{
     display: none;
 }
 button.Pcançons{
-    width: 100%;
+    width: 80%;
     background-color: black;
     color: white;
     border: none;
@@ -62,6 +139,17 @@ button.Pcançons{
     font-size: small;
 
 }
+button.P{
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 4%;
+    font-size: small;
+}
+
 .cançons{
     width: 70%;
     background-color: #022B3A;
@@ -90,14 +178,14 @@ p{
     background-color: black;
     display: grid;
     grid-template-areas:
-    'nav nav nav'
-    'playlist songs songs'
-    'playlist songs songs'
-    'playlist songs songs'
-    'playlist songs songs'
-    'playlist songs songs'
-    'playlist songs songs'
-    'playlist barra barra';
+    'nav nav nav nav nav'
+    'playlist songs songs songs songs'
+    'playlist songs songs songs songs'
+    'playlist songs songs songs songs'
+    'playlist songs songs songs songs'
+    'playlist songs songs songs songs'
+    'playlist songs songs songs songs'
+    'playlist barra barra barra barra';
     gap: 10px;
     height: 100%;
 }
@@ -165,15 +253,69 @@ p{
         background-color: black;
         display: grid;
         grid-template-areas:
-        'nav nav nav'
-        'playlist songs songs'
-        'playlist songs songs'
-        'playlist songs songs'
-        'playlist songs songs'
-        'playlist songs songs'
-        'playlist songs songs'
-        'barra barra barra';
+        'nav nav nav nav nav'
+        'playlist songs songs songs songs'
+        'playlist songs songs songs songs'
+        'playlist songs songs songs songs'
+        'playlist songs songs songs songs'
+        'playlist songs songs songs songs'
+        'playlist songs songs songs songs'
+        'barra barra barra barra barra';
         gap: 10px;
         height: 100%;
     }
   }
+  button{
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el mouse sobre las imágenes */
+    transition: transform 0.2s; /* Agrega una transición suave en la transformación (escala) */
+  }
+  button.cançons:hover{
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% al pasar el mouse */
+  }
+  button.Pcançons:hover{
+     /* Crea una sombra alrededor */
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
+  }
+  button.Pcançons:active{
+    /* Crea una sombra alrededor */
+    transform: scale(1.1); }
+    button.P:hover{
+      /* Crea una sombra alrededor */
+     box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
+   }
+   button.P:active{
+     /* Crea una sombra alrededor */
+     transform: scale(1.1); }
+  img {
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el mouse sobre las imágenes */
+    transition: transform 0.2s; /* Agrega una transición suave en la transformación (escala) */
+  }
+  
+  /* Estilo para las imágenes cuando se pasa el mouse sobre ellas */
+  img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% al pasar el mouse */
+  }
+  .showButtons:hover{
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% al pasar el mouse */
+    /* Que cambie de color */
+    filter: invert(100%);
+  }
+  .showButtons{
+    cursor: pointer;
+  }
+
+
+
+  /* Estilo para las canciones */
+.cançons {
+  /* Estilo para las canciones no seleccionadas */
+  font-size: 16px;
+}
+
+/* Estilo para la canción seleccionada */
+.cançons.selected {
+  /* Estilo para la canción seleccionada (por ejemplo, un tamaño de fuente más grande) */
+  font-size: 20px;
+  transform: scale(1.1);
+  background-color: rgb(73, 73, 73);
+}
