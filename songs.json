@@ -1,77 +1,104 @@
 {
     "playlists": [
-      {
-        "id": 1,
-        "name": "Para Estudiar",
-        "songs": [
-          0,1,2,3
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Anuel chill",
-        "songs": [
-          5,4,3,2,1,0
-        ]
-      },
-      {
-        "id": 3,
-        "name": "GYM",
-        "songs": [
-          1,2,3,4,5
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Jhayco",
-        "songs": [
-          3,1,2,4,5
-        ]
-        
-      }
+        {
+            "id": 1,
+            "name": "Para Estudiar",
+            "songs": [
+                5,
+                1,
+                3,
+                2
+            ],
+            "reproducciones": 0
+        },
+        {
+            "id": 2,
+            "name": "Anuel chill",
+            "songs": [
+                5,
+                4,
+                3,
+                2,
+                1,
+                0
+            ],
+            "reproducciones": 0
+        },
+        {
+            "id": 3,
+            "name": "GYM",
+            "songs": [
+                0,
+                4,
+                3,
+                2,
+                1
+            ],
+            "reproducciones": 0
+        },
+        {
+            "id": 4,
+            "name": "Jhayco",
+            "songs": [
+                5,
+                4,
+                3,
+                2,
+                1,
+                0
+            ],
+            "reproducciones": 0
+        }
     ],
     "totesSongs": [
-      {
-        "id": 0,
-        "title": "Dream",
-        "artist": "Artista 1",
-        "url": "songs/Dream.mp3",
-        "cover":"Imatges/ala.jpg"
-      },
-      {
-        "id": 1,
-        "title": "Dreams",
-        "artist": "Artista 2",
-        "url": "songs/Dreams.mp3",
-        "cover":"Imatges/ela.jpg"
-      },
-      {
-        "id": 2,
-        "title": "Gully",
-        "artist": "Artista 2",
-        "url": "songs/Gully.mp3",
-        "cover":"Imatges/ila.jpg"
-      },
-      {
-        "id": 3,
-        "title": "Amine",
-        "artist": "Artista 2",
-        "url": "songs/Indian_Cinemascope.mp3",
-        "cover":"Imatges/aa.jpg"
-      },
-      {
-        "id": 4,
-        "title": "Lawrence",
-        "artist": "Artista 2",
-        "url": "songs/Lawrence.mp3",
-        "cover":"Imatges/ee.jpg"
-      },
-      {
-        "id": 5,
-        "title": "Undeground",
-        "artist": "Artista 2",
-        "url": "songs/Underground.mp3",
-        "cover":"Imatges/ii.jpg"
-      }
+        {
+            "id": 0,
+            "title": "Dream",
+            "artist": "Jordi",
+            "url": "songs\/Dream.mp3",
+            "cover": "Imatges\/ala.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Dreams",
+            "artist": "Bad",
+            "url": "songs\/Dreams.mp3",
+            "cover": "Imatges\/ela.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Gully",
+            "artist": "Anuel",
+            "url": "songs\/Gully.mp3",
+            "cover": "Imatges\/ila.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Amine",
+            "artist": "jhayco",
+            "url": "songs\/Indian_Cinemascope.mp3",
+            "cover": "Imatges\/aa.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Lawrence",
+            "artist": "Law",
+            "url": "songs\/Lawrence.mp3",
+            "cover": "Imatges\/ee.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Undeground",
+            "artist": "Shawn",
+            "url": "songs\/Underground.mp3",
+            "cover": "Imatges\/ii.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Hola",
+            "artist": "Hola",
+            "url": "NovesSongs\/DanceOfTheGypsies.mp3",
+            "cover": "Imatges\/aa.jpg"
+        }
     ]
 }
