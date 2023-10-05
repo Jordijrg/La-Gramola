@@ -37,7 +37,7 @@
         <div class="grid-container">
             <nav class="nav">
                 <div class="nav1">
-                <form action="tu_script_de_busqueda.php" class="cerca" method="get">
+                <form action="#" class="cerca" method="get" id="searchForm">
                     <input type="text" id="busqueda" name="q" placeholder="Introduïu la vostra cerca aquí"/>
                     <button on type="submit" >
                         <img src="Imatges/lupa.png" class="lupa" alt="">
@@ -50,9 +50,9 @@
                     <div class="infoContent">
                         <h2>Ranking de Playlists</h2>
                         <div id="playlistRanking"><p class="showRanking" id="ranking"> </p></div>
-                        <h2>Últim Playlist Escoltada</h2>
+                        <h2>Última Playlist Escoltada</h2>
                         <div id="lastplaylist"><p class="showRanking" id="ultimaPlay"> </p></div>
-                        <button id="backButton">Atrás</button>
+                        <button id="backButton">Enrere</button>
                     </div>
                 </div>
                 </div>
@@ -150,14 +150,14 @@
             <div class="barra">
                 <div class="cntr">
                     <div >
-                        <img src="Imatges/volum.png" id="volum" class="vol" alt="Imatge" ></img>
+                        <img src="Imatges/volum.png" id="volum" class="vol bhover" alt="Imatge" ></img>
                         <input type="range" id="barravolum" max="100" value="20"></progress>
-                        <img src="Imatges/ant.png" class="ant" id="ant"></img>
-                        <img src="Imatges/pararr.png" id="pararButton" class="rep"></img>
-                        <img id="playButton" src="Imatges/play.png" class="pausa"></img>
-                        <img id="pauseButton" src="Imatges/pausa.png" class="pausa"></img>
-                        <img src="Imatges/next.png" class="next" id="next"></img>
-                        <img src="Imatges/rand.png" id="randomButton" class="ale"></img>
+                        <img src="Imatges/ant.png" class="ant bhover" id="ant"></img>
+                        <img src="Imatges/pararr.png" id="pararButton" class="rep bhover"></img>
+                        <img id="playButton" src="Imatges/play.png" class="pausa bhover"></img>
+                        <img id="pauseButton" src="Imatges/pausa.png" class="pausa bhover"></img>
+                        <img src="Imatges/next.png" class="next bhover" id="next"></img>
+                        <img src="Imatges/rand.png" id="randomButton" class="ale bhover"></img>
                     </div>  
                 </div>
                 <div class="musica">
@@ -165,7 +165,7 @@
                     <input type="range" id="barraProgreso" max="100" value="0"></progress>
                     <h6 id="tempsTotal">00:00</h6>
                 </div>
-                <div class="music-visualizer" id="music-visualizer">
+                <div class="music-visualizer paused" id="music-visualizer">
                     <div class="bar bar-1"></div>
                     <div class="bar bar-2"></div>
                     <div class="bar bar-3"></div>

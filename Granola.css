@@ -2,6 +2,9 @@
     --borde-pagina: 10px;
 }
 
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 /* Estilo para el contenedor del formulario */
 .overlay {
   display: none;
@@ -194,16 +197,24 @@ button.P{
     font-size: small;
 }
 
-.cançons{
-    width: 60%;
-    background-color: #022B3A;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 1%;
-    font-size: small;
+.cançons {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: space-between; /* Coloca espacio entre el texto y la imagen */
+  width: 60%;
+  background-color: #022B3A;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 1%;
+  font-size: small;
 }
+.cançons img {
+  width: 30px;
+  height: 30px;
+}
+
 p{
     color: white;
 }
@@ -214,6 +225,12 @@ p{
     background-color: black;
     padding: 10px;
     overflow-y: auto;
+}
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .barra{grid-area: barra;
     background-color: #022B3A;
@@ -242,7 +259,9 @@ p{
     width: 10px;
     height: 10px;
   }
-
+  #barravolum{
+    display: none;
+  }
   .cntr{
     grid-area: cntr;
     color: white;
@@ -325,10 +344,12 @@ p{
     height: 100px;
     padding: 10px;
   }
+  .cançons img{
+    width: 30px;
+    height: 30px;
+  };
 
-  #barravolum{
-    display: none;
-  }
+
 
   @media screen and (max-width: 768px) {
     .grid-container{
@@ -368,6 +389,7 @@ p{
       /* Crea una sombra alrededor */
      box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
    }
+
    button.P:active{
      /* Crea una sombra alrededor */
      transform: scale(1.1); 
@@ -376,7 +398,9 @@ p{
     cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el mouse sobre las imágenes */
     transition: transform 0.2s; /* Agrega una transición suave en la transformación (escala) */
   }
-
+  .bhover:hover{ 
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% al pasar el mouse */
+  }
   
   .showButtons{
     cursor: pointer;
@@ -442,6 +466,9 @@ button.P{
 
 .bar-5 {
   animation: soundWave 0.5s alternate infinite ease-in-out 0.6s;
+}
+.music-visualizer.paused .bar {
+  animation-play-state: paused;
 }
 
 @keyframes soundWave {
