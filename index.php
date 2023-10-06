@@ -38,10 +38,7 @@
             <nav class="nav">
                 <div class="nav1">
                 <form action="#" class="cerca" method="get" id="searchForm">
-                    <input type="text" id="busqueda" name="q" placeholder="Introduïu la vostra cerca aquí"/>
-                    <button on type="submit" >
-                        <img src="Imatges/lupa.png" class="lupa" alt="">
-                    </button>
+                    <h1>La Gramola</h1>
                 </form>
                 </div>
                 <div class="nav2">

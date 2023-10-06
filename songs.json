@@ -7,7 +7,9 @@
                 5,
                 1,
                 3,
-                2,6,9
+                2,
+                6,
+                9
             ],
             "reproducciones": 0
         },
@@ -20,7 +22,8 @@
                 3,
                 2,
                 1,
-                0,7
+                0,
+                7
             ],
             "reproducciones": 0
         },
@@ -32,7 +35,9 @@
                 4,
                 3,
                 2,
-                1,9,7
+                1,
+                9,
+                7
             ],
             "reproducciones": 0
         },
@@ -43,7 +48,9 @@
                 0,
                 3,
                 5,
-                4,6,8
+                4,
+                6,
+                8
             ],
             "reproducciones": 0
         }
@@ -101,7 +108,7 @@
         {
             "id": 7,
             "title": "Quizas, Tal vez",
-            "artist": "Eladio Carrión",
+            "artist": "Eladio Carri\u00f3n",
             "url": "songs\/QUIZAS.mp3",
             "cover": "Imatges\/QUIZAS.jpg"
         },
@@ -111,8 +118,7 @@
             "artist": "Jhayco",
             "url": "songs\/FANTASMA.mp3",
             "cover": "Imatges\/FANTASMA.jpg"
-        }
-        ,
+        },
         {
             "id": 9,
             "title": "MPI",

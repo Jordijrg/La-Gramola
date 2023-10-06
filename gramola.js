@@ -3,7 +3,7 @@ var cançoActual = 0;
 var ON = false;
 let playlistActual2 = null;
 
-//JP
+//Obtenir k'arxiu json
 async function obtenirCancons() {
     const resposta = await fetch('songs.json');
     return resposta.json();
@@ -15,9 +15,11 @@ const totesCancons = cançons.totesSongs;
 var PlaylistActual = cançons.totesSongs;
 let reproduintTotes = true;
 
+//Mostrar les cançons al boto de cançons
 const cançonss = document.getElementById("cançonss");
 var mostr = false;
 cançonss.addEventListener("click", function () {
+    //L'estil del boto de cançons
     if (!mostr) {
         mostr = true;
         cançonss.style.backgroundColor = "rgb(40, 40, 40)";
@@ -29,11 +31,13 @@ cançonss.addEventListener("click", function () {
     reproduintTotes = true;
     PlaylistActual = cançons.totesSongs;
     song_list.innerHTML = "";
+    //es mostra la llista de cançons
     totesCancons.forEach(function (song) {
         song_list.innerHTML += `
             <button class="cançons" song_id="${song.id}" song_url="${song.url}">${song.title} - ${song.artist} <img class"imgbotosong" src="${song.cover}"></button>
         `;
     });
+    //Sonar cançons
     song_list.querySelectorAll("button").forEach(function (canço) {
         canço.addEventListener("click", function () {
             cançoActual = parseInt(canço.getAttribute("song_id"));
@@ -43,14 +47,14 @@ cançonss.addEventListener("click", function () {
     });
     sonarCancion(0);
 });
-
+//Mostrar totes les cançons al principi
 const song_list = document.getElementById("song-list");
 totesCancons.forEach(function (song) {
     song_list.innerHTML += `
         <button class="cançons" song_id="${song.id}" song_url="${song.url}">${song.title} - ${song.artist} <img class"imgbotosong" src="${song.cover}"></button>
     `;
 });
-
+//Sonar les cançons al principi
 song_list.querySelectorAll("button").forEach(function (canço) {
     canço.addEventListener("click", function () {
             cançoActual = parseInt(canço.getAttribute("song_id"));
@@ -63,6 +67,7 @@ volum.addEventListener("click", function () {
     mostrarVolum();
 
 });
+//Mostrar la barra de volum
  function mostrarVolum() {
     // Obtiene una referencia a la imagen grande
     const Volum = document.getElementById("barravolum");
@@ -76,44 +81,41 @@ volum.addEventListener("click", function () {
         Volum.style.display = "block";
     }
 }
-// Obtiene referencias a los botones
+// Mostrar i amagar boto de play o pausa
 const playButton = document.getElementById("playButton");
 const pauseButton = document.getElementById("pauseButton");
 
-// Agrega eventos de clic a los botones
+
 playButton.addEventListener("click", function () {
     console.log("Reproduciendo...");
-    // Oculta el botón de reproducción
     
     playButton.style.display = "none";
 
-    // Muestra el botón de pausa
-    pauseButton.style.display = "block"; // O "block" dependiendo del estilo deseado
-    // Reproducir la canción o reanudarla si está en pausa
+    pauseButton.style.display = "block";
+    
     pausarCancion();
 });
 
 pauseButton.addEventListener("click", function () {
     console.log("Reproduciendo...");
 
-    // Oculta el botón de pausa
+   
     pauseButton.style.display = "none";
 
-    // Muestra el botón de reproducción
-    playButton.style.display = "block"; // O "block" dependiendo del estilo deseado
+    playButton.style.display = "block"; 
     pausarCancion();
 });
 
 
-
+//per controlar el volum
 const barravolum = document.getElementById("barravolum");
 barravolum.addEventListener("input", () => {
-    const nuevoVolumen = barravolum.value / 100; // El valor del rango debe estar en el rango [0, 1]
+    const nuevoVolumen = barravolum.value / 100; 
     audio.volume = nuevoVolumen;
 });
 
 
-// Función para reproducir la canción desde una posición específica
+// Funció per reproduir la cançó des d'una posició específica
 function reproducirDesdePosicion(posicion) {
     if (audio.paused || audio.ended) {
         // Si la canción está en pausa o ha terminado, establece la posición y reproduce
@@ -125,12 +127,13 @@ function reproducirDesdePosicion(posicion) {
     }
 }
 
-// Agrega un evento de clic a la barra de progreso
+// Per que funcioni la barra de progres
 barraProgreso.addEventListener("input", () => {
     const nuevaPosicion = barraProgreso.value;
     reproducirDesdePosicion((nuevaPosicion / 100) * audio.duration); // Convierte el valor a segundos
 });
 
+//Funcio per formata el temps
 var temps = document.getElementById("temps");
 var tempsTotal = document.getElementById("tempsTotal");
 function formatTime(seconds) {
@@ -138,17 +141,17 @@ function formatTime(seconds) {
     const segundos = Math.floor(seconds % 60);
     return `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
 }
-
+//Sonar la canço
 function sonarCancion(idCancion) {
     ON = true;
     // console.log("Sonando canción " + idCancion, cançoActual);
     resumeAnimation();
     if (audio === undefined) {
         audio = new Audio();
+        //Actualitzar barra de progres
         audio.addEventListener("timeupdate", () => {
             const porcentaje = (audio.currentTime / audio.duration) * 100;
             barraProgreso.value = porcentaje;
-            // Mostrar el tiempo de la canción en formato MM:SS
             temps.innerHTML = formatTime(audio.currentTime);
             tempsTotal.innerHTML = formatTime(audio.duration);
         });
@@ -158,8 +161,9 @@ function sonarCancion(idCancion) {
         if (song.id == idCancion) {
             if (trobat) return;
             trobat = true;
+            //Per el comoptador de les playlists escoltades
             if (playlistActual2) {
-                // Incrementa el contador de reproducciones de la playlist actual
+               
                 playlistActual2.reproducciones++;
 
                 // Actualiza el archivo JSON o la base de datos solo para la playlist actual
@@ -190,17 +194,18 @@ function sonarCancion(idCancion) {
         console.log("No s'ha trobat la canço");
     }
     if (audio.paused) {
-        // Si la canción está en pausa, muestra el botón de reproducción
+        // Si la cançó està en pausa, mostra el botó de reproducció
         playButton.style.display = "block";
-        // Oculta el botón de pausa
+        // Oculta el botó de pausa
         pauseButton.style.display = "none";
 
     }else{
-        // Si la canción está en reproducción, muestra el botón de pausa
+        // Si la cançó està en reproducció, mostra el botó de pausa
         playButton.style.display = "none";
-        // Oculta el botón de reproducción
+        // Oculta el botó de reproducció
         pauseButton.style.display = "block";
     }
+    // Mostra la portada i el nom de la cançó
     const coverImg = document.getElementById("cover");
     // console.log(PlaylistActual, idCancion)
     coverImg.innerHTML = `<img src="${totesCancons[idCancion].cover}" alt="cover" class="portadasong">`;
@@ -211,48 +216,15 @@ function sonarCancion(idCancion) {
     audio.addEventListener("ended", function () {
         nextSong();
     });
-  function sonarCancion(idCancion) {
-    // Resto del código ...
-
-    const cancionActual = totesCancons.find(song => song.id === idCancion);
-
-    if (cancionActual) {
-        // Obtén todas las listas de reproducción que contienen esta canción
-        const playlistsConCancion = cançons.playlists.filter(playlist => playlist.songs.includes(idCancion));
-        
-        // Incrementa el contador de reproducciones de cada playlist
-        playlistsConCancion.forEach(playlist => {
-            playlist.reproducciones++;
-        });
-
-        // Actualiza todas las playlists en el archivo JSON o en tu base de datos si es necesario
-        // Ejemplo de cómo actualizar en el archivo JSON:
-        fetch('songs.json', {
-            method: 'POST', // Puedes usar 'POST' o 'PUT' según tu configuración
-            body: JSON.stringify({ playlists: cançons.playlists }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                // Manejar la respuesta si es necesario
-                console.log('Comptador de reproduccions de totes les playlists actualitzat amb èxit');
-            })
-            .catch(error => {
-                console.error('Error en actualitzar els comptadors de reproduccions de les playlists', error);
-            });
-    }
-
-    // Resto del código ...
-}
+    
+  
     mostrarPlaylistMasEscuchada();
     mostrarRankingPlaylists();
     setLastPlaylistCookie(playlistActual2.id);
     mostrarUltimaPlaylist();
     
 }
-
+//Pausar la canço
 function pausarCancion() {
     if (audio == undefined) return;
    //Si el audio está pausado, lo reproduce
@@ -264,6 +236,7 @@ function pausarCancion() {
         pauseAnimation();
     }
 }
+//Per tirar enrere la canço
 var ant =document.getElementById("ant");
 ant.addEventListener("click", function () {
     antSong();
@@ -291,7 +264,7 @@ function antSong() {
     }
     console.log(cançoActual);
 };
-
+//Per tirar endavant la canço
 var next = document.getElementById("next");
 next.addEventListener("click", function () {
     nextSong();
@@ -309,7 +282,7 @@ function nextSong() {
         sonarCancion(cançoActual);
     }
 };
-
+//Per reproduir la canço aleatoria
 const randomButton = document.getElementById("randomButton");
 randomButton.addEventListener("click", function () {
     reproducirCancionAleatoria();
@@ -335,7 +308,7 @@ function reproducirCancionAleatoria() {
         sonarCancion(cançoActual);
     }
 }
-
+//Per parar la caço per complet
 const pararaButton = document.getElementById("pararButton");
 pararaButton.addEventListener("click", function () {
     pararCancion();
@@ -350,17 +323,6 @@ function pararCancion() {
 
 
 
-// function resaltarCancion(cancionSeleccionada) {
-//     songs.forEach(function (s) {
-//         cancionSeleccionada.classList.remove("selected");
-//     });
-    
-//     cancionSeleccionada.classList.add("selected");
-
-// }
-
-
-//JP
 const cançonsHTML = document.querySelectorAll(".Pcançons");
 let playlistSeleccionada = null;
 cançonsHTML.forEach(function (canço) {
@@ -391,7 +353,7 @@ cançonsHTML.forEach(function (canço) {
         sonarCancion(songsJSON[0]);
 
         song_list.innerHTML = "";
-
+        //Mostrar les cançons de cada playlist
         songsJSON.forEach(function (song) {
             const button = document.createElement("button");
             button.className = "cançons";
@@ -449,7 +411,7 @@ const showButtons = document.getElementById("showButtons");
 
 
 
-// Agrega un evento al formulario para prevenir su envío por defecto
+// Afegeix un esdeveniment al formulari per prevenir el seu enviament per defecte
 const loginForm = document.getElementById('submit');
 
 
@@ -458,9 +420,8 @@ const agregarCancionBtn = document.getElementById("agregarCancion");
 const formularioAgregar = document.getElementById("formularioAgregar");
 const nuevaCancionForm = document.getElementById("nuevaCancionForm");
 
-// Escucha el clic en el botón "AFEGIR CANÇO"
+// Mostrar formulario afegir canço
 agregarCancionBtn.addEventListener("click", function () {
-    // Muestra el formulario de agregar canción
     if (formularioAgregar.style.display === "block") {
         formularioAgregar.style.display = "none";
         agregarCancionBtn.style.backgroundColor = "rgb(0,0,0)";
@@ -534,17 +495,13 @@ const showInfoLink = document.getElementById("showInfoLink");
   const backButton = document.getElementById("backButton");
   const playlistRanking = document.getElementById("playlistRanking");
 
-  // Agrega un evento de clic al enlace "INFORMACIÒ TÈCNICA"
+  // Mostrar informacio tècnica
   showInfoLink.addEventListener("click", function (e) {
-    e.preventDefault(); // Evita la acción por defecto del enlace
-    // Muestra el div de información técnica
+    e.preventDefault(); 
     infoDiv.style.display = "block";
-    // Llama a la función para cargar y mostrar el ranking de playlists (puedes personalizar esto)
   });
 
-  // Agrega un evento de clic al botón "Atrás"
   backButton.addEventListener("click", function () {
-    // Oculta el div de información técnica
     infoDiv.style.display = "none";
   });
 
@@ -553,25 +510,25 @@ const showInfoLink = document.getElementById("showInfoLink");
 
 
   //Cookies
-  // Obtén el elemento donde quieres mostrar la última playlist
+  // Obtingues l'element on vols mostrar la darrera playlist
 const lastPlaylistDiv = document.getElementById("lastplaylist");
 
-// Función para establecer una cookie con el ID de la última lista de reproducción y la fecha de escucha
+// Funció per establir una galeta amb l'ID de la darrera llista de reproducció i la data d'escolta
 function setLastPlaylistCookie(playlistId) {
-    // Obtenemos la fecha actual
+    //Data actual
     const currentDate = new Date();
 
-    // Configuramos la fecha de expiración de la cookie (30 días a partir de la fecha actual)
+    // Configurem la data d'expiració de la galeta (30 dies a partir de la data actual)
     const expirationDate = new Date(currentDate);
     expirationDate.setDate(expirationDate.getDate() + 30);
 
-    // Creamos el valor de la cookie con el ID de la lista de reproducción y la fecha
+    // Creem el valor de la galeta amb l'ID de la llista de reproducció i la data
     const cookieValue = `last_playlist=${playlistId}; expires=${expirationDate.toUTCString()}; path=/`;
 
-    // Establecemos la cookie en el documento
+    // Establim la galeta al document
     document.cookie = cookieValue;
 
-    // También almacenamos la fecha actual en otra cookie llamada "last_playlist_date"
+    // També emmagatzemem la data actual en una altra galeta anomenada "last_playlist_date"
     const dateCookieValue = `last_playlist_date=${currentDate.toUTCString()}; expires=${expirationDate.toUTCString()}; path=/`;
     document.cookie = dateCookieValue;
 }

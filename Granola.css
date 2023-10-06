@@ -123,6 +123,7 @@ nav {
     align-items: center;
     padding: 10px;
     border-radius: 10px;
+    color: white;
 }
 .user{
     width: 45px;
@@ -349,25 +350,6 @@ p{
     height: 30px;
   };
 
-
-
-  @media screen and (max-width: 768px) {
-    .grid-container{
-        background-color: black;
-        display: grid;
-        grid-template-areas:
-        'nav nav nav nav nav'
-        'playlist songs songs songs songs'
-        'playlist songs songs songs songs'
-        'playlist songs songs songs songs'
-        'playlist songs songs songs songs'
-        'playlist songs songs songs songs'
-        'playlist songs songs songs songs'
-        'barra barra barra barra barra';
-        gap: 10px;
-        height: 100%;
-    }
-  }
   button{
     cursor: pointer; /* Cambia el cursor a una mano cuando se pasa el mouse sobre las imágenes */
     transition: transform 0.2s; /* Agrega una transición suave en la transformación (escala) */
@@ -531,3 +513,72 @@ button.P{
         background-color: #0056b3;
     }
 
+@media screen and (max-width: 768px) {
+  :root {
+    --borde-pagina: 5px; /* Cambia el ancho del borde en dispositivos móviles */
+  }
+
+  /* Reduce el tamaño de la fuente de todos los elementos */
+  * {
+    font-size: 14px; /* Ajusta el tamaño de fuente según tus preferencias */
+  }
+
+  .grid-container {
+    /* Ajusta el diseño de la cuadrícula en dispositivos móviles */
+    grid-template-areas:
+      'nav'
+      'playlist'
+      'songs'
+      'barra';
+  }
+
+  .center-form {
+    /* Ajusta el ancho del formulario en dispositivos móviles */
+    width: 90%;
+  }
+  .P{
+    font-size: 10px;
+  };
+  p{
+    font-size: 10px;
+  };
+
+
+  /* Ajusta otros estilos específicos para dispositivos móviles */
+}
+@media screen and (max-width: 488px) {
+  div.playlist{
+    width: 95%;
+  };
+
+  #song-list{
+    width: 95%;
+  };
+  nav{
+    width: 95%;
+  };
+  .grid-container{
+    width: 100%;
+  };
+  .barra{
+    width: 100%;
+  };
+  div.barra{
+    display: grid;
+    grid-template-areas:
+    'music-visualizer'
+    'nomSong'
+    'musica'
+    'cntr'
+    'imgSong';
+    gap: 10px;
+    align-items: center;
+  }
+  .imgsong{
+    display: none;
+  }
+  h6{
+    font-size: 10px;
+  };
+
+}
